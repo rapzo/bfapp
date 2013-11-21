@@ -13,3 +13,5 @@
 //= require jquery
 //= require backbone-rails
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

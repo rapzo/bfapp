@@ -7,6 +7,9 @@ gem 'rails', '4.0.1'
 gem 'sqlite3'
 # gem 'pg'
 
+# active-resource
+gem 'activeresource'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -18,6 +21,10 @@ gem 'sass-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'compass-rails'
+
+gem 'zurb-foundation'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
