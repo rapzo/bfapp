@@ -42,6 +42,9 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     erubis (2.7.0)
+    foundation-rails (5.0.0.1)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     fssm (0.2.10)
     haml (4.0.4)
       tilt
@@ -108,8 +111,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    zurb-foundation (4.3.2)
-      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -118,11 +119,12 @@ DEPENDENCIES
   activeresource
   backbone-rails
   compass-rails
+  foundation-rails
   haml
   jbuilder (~> 1.2)
   jquery-rails
+  json
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
-  zurb-foundation

@@ -10,6 +10,9 @@ gem 'sqlite3'
 # active-resource
 gem 'activeresource'
 
+# JSON parsing tools
+gem 'json'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -24,7 +27,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'compass-rails'
 
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
