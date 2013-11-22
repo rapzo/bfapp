@@ -6,9 +6,10 @@
 
   %section.top-bar-section
     %ul.right
+      - if (!current_page?(:root))
+        %li
+          = link_to('home', url_for(controller: 'pages', action: 'index'))
       %li
-        %a(href="#") Home
+        = link_to('catalog', url_for(controller: 'products', action: 'index'))
       %li
-        %a(href="#") Catalog
-      %li
-        %a(href="#") About
+        = link_to('about', url_for(controller: 'pages', action: 'about'))

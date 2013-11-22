@@ -7,14 +7,16 @@
 
     = stylesheet_link_tag "application", media: "all"
 
-    = javascript_include_tag "vendor/custom.modernizr"
+    = javascript_include_tag "vendor/modernizr"
 
   = yield :head
 
   %body
     = render partial: 'elements/header'
+    
     .main-container
       = yield
+
     = render partial: 'elements/footer'
 
     = javascript_include_tag "application"

@@ -56,6 +56,8 @@ Bfapp::Application.routes.draw do
   
   root "pages#index"
 
+  get "about" => "pages#about"
+
   get "logout" => "sessions#delete", :as => "logout"
   get "login" => "sessions#create", :as => "login"
   get "register" => "users#new", :as => "register"
