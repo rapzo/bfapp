@@ -58,7 +58,7 @@ Bfapp::Application.routes.draw do
 
   get "logout" => "sessions#delete", :as => "logout"
   get "login" => "sessions#create", :as => "login"
-  get "register" => "users#create", :as => "register"
+  get "register" => "users#new", :as => "register"
 
   resources :users
 
