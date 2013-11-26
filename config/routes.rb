@@ -66,7 +66,9 @@ Bfapp::Application.routes.draw do
 
   resources :sessions, :only => [:create, :delete]
 
-  resources :clients
+  resources :clients do
+    resources :orders
+  end
 
   resources :articles
 
