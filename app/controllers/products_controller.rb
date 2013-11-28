@@ -8,5 +8,12 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Products.new
+    :params.inspect
+    @product.inspect
   end
+
+  def delete
+  end
+
 end

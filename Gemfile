@@ -25,7 +25,7 @@ gem 'sass-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'compass-rails'
+# gem 'compass-rails'
 
 gem 'foundation-rails'
 

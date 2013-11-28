@@ -56,6 +56,8 @@ Bfapp::Application.routes.draw do
   
   root "pages#index"
 
+  mount Foundation::Rails::Engine => "/styleguide" if Rails.env.development?
+
   get "about" => "pages#about"
 
   get "logout" => "sessions#delete", :as => "logout"

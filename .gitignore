@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore sqlite3 db files
-bfdb*
+# bfdb*
