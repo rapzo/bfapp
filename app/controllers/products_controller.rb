@@ -1,10 +1,13 @@
+require 'net/http'
+
 class ProductsController < ApplicationController
   def index
-    begin
-      @products = Products.all
-    rescue Errno::ECONNREFUSED => c
-      puts 'API DAUN!'
-    end
+    uri = URI('http://0.0.0.0:49191/api/artigos')
+    @products = Net::HTTP.get(uri)
+    puts @products
+
+    @products = Products.all
+    puts @products
   end
 
   def show
