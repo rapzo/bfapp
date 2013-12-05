@@ -1,0 +1,45 @@
+<h1>Listing articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Tax</th>
+      <th>Family</th>
+      <th>Pvp1</th>
+      <th>Pvp2</th>
+      <th>Pvp3</th>
+      <th>Storage</th>
+      <th>Type</th>
+      <th>Stock change</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.code %></td>
+        <td><%= article.description %></td>
+        <td><%= article.tax %></td>
+        <td><%= article.family %></td>
+        <td><%= article.pvp1 %></td>
+        <td><%= article.pvp2 %></td>
+        <td><%= article.pvp3 %></td>
+        <td><%= article.storage %></td>
+        <td><%= article.type %></td>
+        <td><%= article.stock_change %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>

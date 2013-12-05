@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @article.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @article.description %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @article.tax %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @article.family %>
+</p>
+
+<p>
+  <strong>Pvp1:</strong>
+  <%= @article.pvp1 %>
+</p>
+
+<p>
+  <strong>Pvp2:</strong>
+  <%= @article.pvp2 %>
+</p>
+
+<p>
+  <strong>Pvp3:</strong>
+  <%= @article.pvp3 %>
+</p>
+
+<p>
+  <strong>Storage:</strong>
+  <%= @article.storage %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @article.type %>
+</p>
+
+<p>
+  <strong>Stock change:</strong>
+  <%= @article.stock_change %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

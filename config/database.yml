@@ -11,13 +11,13 @@ development:
   pool: 5
 
 test:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: bfdb_test
   pool: 5
 
 production:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: bfdb
   pool: 5

@@ -1,0 +1,51 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Nif</th>
+      <th>Active</th>
+      <th>Locked</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Payment condition</th>
+      <th>Payment type</th>
+      <th>Market</th>
+      <th>Country</th>
+      <th>Discount</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= supplier.code %></td>
+        <td><%= supplier.name %></td>
+        <td><%= supplier.nif %></td>
+        <td><%= supplier.active %></td>
+        <td><%= supplier.locked %></td>
+        <td><%= supplier.address %></td>
+        <td><%= supplier.phone %></td>
+        <td><%= supplier.fax %></td>
+        <td><%= supplier.payment_condition %></td>
+        <td><%= supplier.payment_type %></td>
+        <td><%= supplier.market %></td>
+        <td><%= supplier.country %></td>
+        <td><%= supplier.discount %></td>
+        <td><%= link_to 'Show', supplier %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplier', new_supplier_path %>

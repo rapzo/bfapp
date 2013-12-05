@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  description: MyText
+  tax: 1
+  family: MyString
+  pvp1: 1
+  pvp2: 1
+  pvp3: 1
+  storage: MyString
+  type: 
+  stock_change: false
+
+two:
+  code: MyString
+  description: MyText
+  tax: 1
+  family: MyString
+  pvp1: 1
+  pvp2: 1
+  pvp3: 1
+  storage: MyString
+  type: 
+  stock_change: false

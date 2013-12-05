@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @supplier.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <strong>Nif:</strong>
+  <%= @supplier.nif %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @supplier.active %>
+</p>
+
+<p>
+  <strong>Locked:</strong>
+  <%= @supplier.locked %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @supplier.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @supplier.phone %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @supplier.fax %>
+</p>
+
+<p>
+  <strong>Payment condition:</strong>
+  <%= @supplier.payment_condition %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @supplier.payment_type %>
+</p>
+
+<p>
+  <strong>Market:</strong>
+  <%= @supplier.market %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @supplier.country %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @supplier.discount %>
+</p>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>
