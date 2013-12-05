@@ -1,21 +1,35 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  active        :boolean
+#  locked        :boolean
+#  client_id     :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
   email: MyString
-  password: MyString
-  company: MyString
-  address: MyString
-  phone: MyString
-  active: 
-  locked: 
+  password_hash: MyString
+  password_salt: MyString
+  active: false
+  locked: false
+  client_id: 
 
 two:
   name: MyString
   email: MyString
-  password: MyString
-  company: MyString
-  address: MyString
-  phone: MyString
-  active: 
-  locked: 
+  password_hash: MyString
+  password_salt: MyString
+  active: false
+  locked: false
+  client_id: 

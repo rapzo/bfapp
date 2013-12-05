@@ -10,6 +10,9 @@ gem 'sqlite3'
 # active-resource
 gem 'activeresource'
 
+# annotated models
+gem 'annotate'
+
 # JSON parsing tools
 gem 'json'
 

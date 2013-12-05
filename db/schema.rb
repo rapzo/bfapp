@@ -11,70 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204170059) do
-
-  create_table "articles", force: true do |t|
-    t.string   "code"
-    t.text     "description"
-    t.integer  "tax"
-    t.string   "family"
-    t.integer  "pvp1"
-    t.integer  "pvp2"
-    t.integer  "pvp3"
-    t.string   "storage"
-    t.string   "type"
-    t.boolean  "stock_change"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "clients", force: true do |t|
-    t.string   "code"
-    t.string   "name"
-    t.string   "nif"
-    t.boolean  "active"
-    t.boolean  "locked"
-    t.text     "address"
-    t.string   "phone"
-    t.string   "fax"
-    t.integer  "payment_condition"
-    t.integer  "payment_type"
-    t.integer  "market"
-    t.string   "country"
-    t.integer  "discount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "suppliers", force: true do |t|
-    t.string   "code"
-    t.string   "name"
-    t.string   "nif"
-    t.boolean  "active"
-    t.boolean  "locked"
-    t.text     "address"
-    t.string   "phone"
-    t.string   "fax"
-    t.integer  "payment_condition"
-    t.integer  "payment_type"
-    t.integer  "market"
-    t.string   "country"
-    t.integer  "discount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131205175626) do
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.string   "company"
-    t.string   "address"
-    t.string   "phone"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.boolean  "active"
     t.boolean  "locked"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["client_id"], name: "index_users_on_client_id"
 
 end
