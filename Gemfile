@@ -8,7 +8,10 @@ gem 'sqlite3'
 # gem 'pg'
 
 # active-resource
-gem 'activeresource'
+# gem 'activeresource'
+#
+# Going to party with httparty for some testings
+gem 'httparty'
 
 # annotated models
 gem 'annotate'

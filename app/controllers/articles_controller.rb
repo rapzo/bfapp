@@ -1,10 +1,17 @@
+require 'httparty'
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    begin
+      data = HTTParty.get('http://0.0.0.0:1337/api/articles')
+      @articles = data
+    rescue
+      @articles = []
+    end
   end
 
   # GET /articles/1

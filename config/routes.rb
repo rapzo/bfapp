@@ -59,25 +59,35 @@ Bfapp::Application.routes.draw do
   #   end
   
   root "pages#index"
-
-  mount Foundation::Rails::Engine => "/styleguide" if Rails.env.development?
-
+  
   get "about" => "pages#about"
+
+  # mount Foundation::Rails::Engine => "/styleguide" if Rails.env.development?
+
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#delete", :as => "logout"
   get "register" => "users#new", :as => "register"
 
-  resources :users
+  get "catalog" => "articles#index", :as => "catalog"
 
-  resources :sessions
+  resources :sessions, :only => [:new, :create, :destroy]
 
   resources :clients do
+    resources :users, :only => [:new, :create, :show, :update, :destroyq]
     resources :orders
   end
 
-  resources :articles
+  # resources :articles
 
-  resources :products
+  # resources :products
+  
+  
+  namespace :admin do
+    resource :products
+    resource :users
+    resource :clients
+    resource :articles
+  end
 
 end
