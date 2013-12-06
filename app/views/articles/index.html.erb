@@ -12,10 +12,11 @@
           
           <div class="small-12 medium-6 large-4 columns">
             <div class=" product-box">
-              <h2><%= "Artigo #{a.name}" %></h2>
+              <h2><%= "Artigo #{a['CodArtigo']}" %></h2>
               <div class="">
                 <img class="product-thumb" src="http://fillmurray.com/200/200" alt="<%= p.class %>">
               </div>
+              <h4><%= a['DescArtigo'] %></h4>
             </div>
           </div>
 
