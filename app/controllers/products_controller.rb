@@ -2,7 +2,7 @@ require 'net/http'
 
 class ProductsController < ApplicationController
   def index
-    uri = URI('http://0.0.0.0:49191/api/artigos')
+    uri = URI('http://127.0.0.1:8080/api/articles')
     @products = Net::HTTP.get(uri)
     puts @products
 

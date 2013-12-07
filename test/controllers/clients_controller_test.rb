@@ -18,7 +18,7 @@ class ClientsControllerTest < ActionController::TestCase
 
   test "should create client" do
     assert_difference('Client.count') do
-      post :create, client: { active: @client.active, address: @client.address, code: @client.code, country: @client.country, discount: @client.discount, fax: @client.fax, locked: @client.locked, market: @client.market, name: @client.name, nif: @client.nif, payment_condition: @client.payment_condition, payment_type: @client.payment_type, phone: @client.phone }
+      post :create, client: { address: @client.address, code: @client.code, country: @client.country, country: @client.country, currency: @client.currency, discount: @client.discount, fax: @client.fax, market: @client.market, name: @client.name, nif: @client.nif, payment_condition: @client.payment_condition, payment_type: @client.payment_type, phone: @client.phone }
     end
 
     assert_redirected_to client_path(assigns(:client))
@@ -35,7 +35,7 @@ class ClientsControllerTest < ActionController::TestCase
   end
 
   test "should update client" do
-    patch :update, id: @client, client: { active: @client.active, address: @client.address, code: @client.code, country: @client.country, discount: @client.discount, fax: @client.fax, locked: @client.locked, market: @client.market, name: @client.name, nif: @client.nif, payment_condition: @client.payment_condition, payment_type: @client.payment_type, phone: @client.phone }
+    patch :update, id: @client, client: { address: @client.address, code: @client.code, country: @client.country, country: @client.country, currency: @client.currency, discount: @client.discount, fax: @client.fax, market: @client.market, name: @client.name, nif: @client.nif, payment_condition: @client.payment_condition, payment_type: @client.payment_type, phone: @client.phone }
     assert_redirected_to client_path(assigns(:client))
   end
 

@@ -16,16 +16,6 @@
 </p>
 
 <p>
-  <strong>Active:</strong>
-  <%= @client.active %>
-</p>
-
-<p>
-  <strong>Locked:</strong>
-  <%= @client.locked %>
-</p>
-
-<p>
   <strong>Address:</strong>
   <%= @client.address %>
 </p>
@@ -41,8 +31,13 @@
 </p>
 
 <p>
-  <strong>Payment condition:</strong>
-  <%= @client.payment_condition %>
+  <strong>Country:</strong>
+  <%= @client.country %>
+</p>
+
+<p>
+  <strong>Market:</strong>
+  <%= @client.market %>
 </p>
 
 <p>
@@ -51,8 +46,8 @@
 </p>
 
 <p>
-  <strong>Market:</strong>
-  <%= @client.market %>
+  <strong>Payment condition:</strong>
+  <%= @client.payment_condition %>
 </p>
 
 <p>
@@ -63,6 +58,11 @@
 <p>
   <strong>Discount:</strong>
   <%= @client.discount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @client.currency %>
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |

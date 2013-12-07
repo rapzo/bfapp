@@ -1,14 +1,12 @@
-require 'net/http'
+require 'httparty'
 
-class Client
+class ExternalClient
 	include ActiveModel::Serializers::JSON
 
-	self.uri = 'http://0.0.0.0:1337:/api/clients/'
-
 	def fetch(id)
-    uri = URI(@uri)
+		uri = 'http://0.0.0.0:1337:/api/clients/'
     begin
-	    @products = Net::HTTP.get(uri)
+	    @products = HTTParty.get(@uri)
 		rescue
 		end
 	end

@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     begin
-      data = HTTParty.get('http://0.0.0.0:1337/api/articles')
+      data = HTTParty.get('http://127.0.0.1:1337/api/articles')
       @articles = data
     rescue
       @articles = []

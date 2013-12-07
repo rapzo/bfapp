@@ -24,16 +24,8 @@
     <%= f.text_field :nif %>
   </div>
   <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="field">
-    <%= f.label :locked %><br>
-    <%= f.check_box :locked %>
-  </div>
-  <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_field :address %>
   </div>
   <div class="field">
     <%= f.label :phone %><br>
@@ -44,16 +36,20 @@
     <%= f.text_field :fax %>
   </div>
   <div class="field">
-    <%= f.label :payment_condition %><br>
-    <%= f.number_field :payment_condition %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_type %><br>
-    <%= f.number_field :payment_type %>
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
   </div>
   <div class="field">
     <%= f.label :market %><br>
-    <%= f.number_field :market %>
+    <%= f.text_field :market %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_type %><br>
+    <%= f.text_field :payment_type %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_condition %><br>
+    <%= f.text_field :payment_condition %>
   </div>
   <div class="field">
     <%= f.label :country %><br>
@@ -62,6 +58,10 @@
   <div class="field">
     <%= f.label :discount %><br>
     <%= f.number_field :discount %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br>
+    <%= f.text_field :currency %>
   </div>
   <div class="actions">
     <%= f.submit %>

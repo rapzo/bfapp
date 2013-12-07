@@ -1,5 +1,3 @@
-require 'models/api/client'
-
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
@@ -71,6 +69,20 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:code, :name, :nif, :active, :locked, :address, :phone, :fax, :payment_condition, :payment_type, :market, :country, :discount)
+      params.require(:client).permit(
+        :code,
+        :name,
+        :nif,
+        :address,
+        :phone,
+        :fax,
+        :country,
+        :market,
+        :payment_type,
+        :payment_condition,
+        :country,
+        :discount,
+        :currency
+      )
     end
 end

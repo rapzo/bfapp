@@ -8,8 +8,9 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="row">
+      
       <% @articles.each do |a| %>
-          
+        <a href="<%= catalog_show_path(code: a['CodArtigo']) %>" class="article-link">
           <div class="small-12 medium-6 large-4 columns">
             <div class=" product-box">
               <h2><%= "Artigo #{a['CodArtigo']}" %></h2>
@@ -19,8 +20,9 @@
               <h4><%= a['DescArtigo'] %></h4>
             </div>
           </div>
-
+        </a>
       <% end %>
+
       </div>
     </div>
   </div>

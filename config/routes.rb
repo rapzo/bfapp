@@ -1,8 +1,4 @@
 Bfapp::Application.routes.draw do
-  resources :suppliers
-
-  resources :clients
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -70,11 +66,12 @@ Bfapp::Application.routes.draw do
   get "register" => "users#new", :as => "register"
 
   get "catalog" => "articles#index", :as => "catalog"
+  get "catalog/:code"=> "articles#show", :as => "catalog_show"
 
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :clients do
-    resources :users, :only => [:new, :create, :show, :update, :destroyq]
+    resources :users
     resources :orders
   end
 
