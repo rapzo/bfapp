@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206025328) do
+ActiveRecord::Schema.define(version: 20131211120350) do
 
   create_table "clients", force: true do |t|
     t.string   "code"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20131206025328) do
     t.string   "payment_condition"
     t.integer  "discount"
     t.string   "currency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "managers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.boolean  "locked"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

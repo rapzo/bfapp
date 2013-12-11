@@ -12,11 +12,14 @@
   = yield :head
 
   %body
-    = render partial: 'elements/header'
+    .row
+      .small-12.large-12.columns
+      = render partial: 'elements/header'
     
-    .main-container
+      .small-12.large-12.columns.container
       = yield
 
-    = render partial: 'elements/footer'
+    .row
+      = render partial: 'elements/footer'
 
     = javascript_include_tag "application"
