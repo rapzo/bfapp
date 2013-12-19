@@ -1,15 +1,16 @@
-%nav.top-bar
-  %ul.title-area
-    %li.name
-      %h1
-        %a Bela Flor
+.large-12.columns
+  %nav.top-bar
+    %ul.title-area
+      %li.name
+        %h1
+          %a Bela Flor
 
-  %section.top-bar-section
-    %ul.right
-      - if (!current_page?(:root))
+    %section.top-bar-section
+      %ul.right
+        - if (!current_page?(:root))
+          %li
+            = link_to('home', url_for(controller: 'pages', action: 'index'))
         %li
-          = link_to('home', url_for(controller: 'pages', action: 'index'))
-      %li
-        = link_to('catalog', url_for(controller: 'articles', action: 'index'))
-      %li
-        = link_to('about', url_for(controller: 'pages', action: 'about'))
+          = link_to('catalog', url_for(controller: 'articles', action: 'index'))
+        %li
+          = link_to('about', url_for(controller: 'pages', action: 'about'))

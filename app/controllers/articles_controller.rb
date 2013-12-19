@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     begin
-      data = HTTParty.get('http://127.0.0.1:1337/api/articles')
+      data = HTTParty.get("#{APIURI}articles")
       @articles = data
     rescue
       @articles = []
@@ -76,6 +76,17 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:code, :description, :tax, :family, :pvp1, :pvp2, :pvp3, :storage, :type, :stock_change)
+      params.require(:article).permit(
+        :code,
+        :description,
+        :tax,
+        :family,
+        :pvp1,
+        :pvp2,
+        :pvp3,
+        :storage,
+        :type,
+        :stock_change
+      )
     end
 end

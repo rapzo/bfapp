@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="large-8 large-centered columns">
 <%= form_for(@client) do |f| %>
   <% if @client.errors.any? %>
     <div id="error_explanation">
@@ -52,14 +54,6 @@
     <%= f.text_field :payment_condition %>
   </div>
   <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :discount %><br>
-    <%= f.number_field :discount %>
-  </div>
-  <div class="field">
     <%= f.label :currency %><br>
     <%= f.text_field :currency %>
   </div>
@@ -67,3 +61,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

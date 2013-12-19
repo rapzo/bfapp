@@ -1,51 +1,35 @@
-<h1>Listing clients</h1>
+<div class="large-12 columns">
+  <h1>Listing clients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Nif</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Fax</th>
-      <th>Country</th>
-      <th>Market</th>
-      <th>Payment type</th>
-      <th>Payment condition</th>
-      <th>Country</th>
-      <th>Discount</th>
-      <th>Currency</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= client.code %></td>
-        <td><%= client.name %></td>
-        <td><%= client.nif %></td>
-        <td><%= client.address %></td>
-        <td><%= client.phone %></td>
-        <td><%= client.fax %></td>
-        <td><%= client.country %></td>
-        <td><%= client.market %></td>
-        <td><%= client.payment_type %></td>
-        <td><%= client.payment_condition %></td>
-        <td><%= client.country %></td>
-        <td><%= client.discount %></td>
-        <td><%= client.currency %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Nif</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th>Country</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= client['CodCliente'] %></td>
+          <td><%= client['NomeCliente'] %></td>
+          <td><%= client['NumContribuinte'] %></td>
+          <td><%= client['MoradaCliente'] %></td>
+          <td><%= client['TelefoneCliente'] %></td>
+          <td><%= client['Moeda'] %></td>
+          <td><%= client['Pais'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Client', new_client_path %>
+  <br>
+
+  <%= link_to 'New Client', new_client_path %>
+</div>

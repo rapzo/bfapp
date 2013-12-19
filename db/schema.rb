@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211120350) do
+ActiveRecord::Schema.define(version: 20131212224325) do
 
   create_table "clients", force: true do |t|
     t.string   "code"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20131211120350) do
     t.string   "password_salt"
     t.boolean  "locked"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "article_id"
+    t.integer  "quantity"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

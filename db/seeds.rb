@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+admin = Manager.create([{
+  email: 'admin@leetapp.net',
+  name: 'Bela Flor manager',
+  password: 'tassbem'
+}])
+
+puts admin ? "Admin added" : "Admin not added"
+
+manager = Manager.create([{
+  email: 'manager@leetapp.net',
+  name: 'Beatriz Flor',
+  password: 'nice'
+}])
+
+puts manager ? "Manager added" : "Manager not added"

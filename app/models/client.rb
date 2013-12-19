@@ -20,4 +20,24 @@
 #
 
 class Client < ActiveRecord::Base
+
+  def self.get_all
+    begin
+      clients = HTTParty.get("#{APIURI}clients")
+    rescue
+      clients = self.all
+    end
+  end
+
+  def self.get(id)
+    begin
+      client = HTTParty.get("#{APIURI}clients/#{id}")
+    rescue
+      client = self.where(id: id).first
+    end
+  end
+
+  def self.post(id)
+  end
+
 end

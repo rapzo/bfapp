@@ -13,13 +13,14 @@
 
   %body
     .row
-      .small-12.large-12.columns
-      = render partial: 'elements/header'
+      .large-12.columns
+        .row
+          = render partial: 'elements/header'
     
-      .small-12.large-12.columns.container
-      = yield
+        .row
+          = yield
 
-    .row
-      = render partial: 'elements/footer'
+        %footer.row
+          = render partial: 'elements/footer'
 
     = javascript_include_tag "application"

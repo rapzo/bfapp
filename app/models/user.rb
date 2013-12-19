@@ -45,5 +45,6 @@ class User < ActiveRecord::Base
 
   def activate
     self.active = true
+    self.save
   end
 end

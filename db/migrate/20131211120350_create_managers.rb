@@ -5,8 +5,8 @@ class CreateManagers < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
-      t.boolean :locked
-      t.boolean :active
+      t.boolean :locked, :default => false
+      t.boolean :active, :default => false
 
       t.timestamps
     end
