@@ -7,6 +7,9 @@
 
     %section.top-bar-section
       %ul.right
+        - if (current_page?(:root))
+          %li
+            = link_to('register', url_for(controller: 'clients', action: 'new'))
         - if (!current_page?(:root))
           %li
             = link_to('home', url_for(controller: 'pages', action: 'index'))
