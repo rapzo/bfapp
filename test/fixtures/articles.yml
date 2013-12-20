@@ -2,24 +2,12 @@
 
 one:
   code: MyString
-  description: MyText
-  tax: 1
-  family: MyString
-  pvp1: 1
-  pvp2: 1
-  pvp3: 1
-  storage: MyString
-  type: 
-  stock_change: false
+  name: MyString
+  price: MyString
+  unity: MyString
 
 two:
   code: MyString
-  description: MyText
-  tax: 1
-  family: MyString
-  pvp1: 1
-  pvp2: 1
-  pvp3: 1
-  storage: MyString
-  type: 
-  stock_change: false
+  name: MyString
+  price: MyString
+  unity: MyString

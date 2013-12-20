@@ -1,3 +1,4 @@
+require 'json'
 # == Schema Information
 #
 # Table name: clients
@@ -20,24 +21,13 @@
 #
 
 class Client < ActiveRecord::Base
+  has_one :user
 
-  def self.get_all
-    begin
-      clients = HTTParty.get("#{APIURI}clients")
-    rescue
-      clients = self.all
-    end
-  end
-
-  def self.get(id)
-    begin
-      client = HTTParty.get("#{APIURI}clients/#{id}")
-    rescue
-      client = self.where(id: id).first
-    end
-  end
-
-  def self.post(id)
-  end
+  validates_presence_of :name, :message => "Please write a name."
+  validates_presence_of :nif, :message => "Please write a valid NIF."
+  validates_presence_of :address, :message => "Please write a valid address."
+  validates_presence_of :phone, :message => "Please write a valid phone number."
+  validates_presence_of :country, :message => "Please write a valid country."
+  validates_presence_of :currency, :message => "Please chose a valid currency."
 
 end

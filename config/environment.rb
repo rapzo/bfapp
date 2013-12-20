@@ -4,4 +4,4 @@ require File.expand_path('../application', __FILE__)
 # Initialize the Rails application.
 Bfapp::Application.initialize!
 
-APIURI = 'http://0.0.0.0:1337/api/'
+APIURI = 'http://sit4g9.no-ip.biz:8080/api/'

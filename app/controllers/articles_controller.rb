@@ -6,12 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    begin
-      data = HTTParty.get("#{APIURI}articles")
-      @articles = data
-    rescue
-      @articles = []
-    end
+    @articles = ApiArticle.all
   end
 
   # GET /articles/1
@@ -71,7 +66,7 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = ApiArticle.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

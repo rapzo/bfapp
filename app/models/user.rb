@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates_presence_of :email, :message => "Enter a valid email."
+  validates_uniqueness_of :email, :message => "That email is already in use."
 
   def self.authenticate(email, password)
     user = self.where(email: email)

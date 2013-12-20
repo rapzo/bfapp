@@ -1,8 +1,4 @@
 Bfapp::Application.routes.draw do
-  resources :orders
-
-  resources :managers
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -58,19 +54,19 @@ Bfapp::Application.routes.draw do
   #     resources :products
   #   end
   
-  root "pages#index"
+  root "articles#index"
   
+  get "about/this" => "pages#index"
+
   get "about" => "pages#about"
 
   # mount Foundation::Rails::Engine => "/styleguide" if Rails.env.development?
-
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#delete", :as => "logout"
   get "register" => "users#new", :as => "register"
   post "register" => "users#create", :as => "users"
 
-  get "catalog" => "articles#index", :as => "catalog"
   get "catalog/:code"=> "articles#show", :as => "catalog_show"
 
   resources :sessions, :only => [:new, :create, :destroy]
@@ -79,6 +75,8 @@ Bfapp::Application.routes.draw do
     resources :users
     resources :orders
   end
+
+  resources :managers
 
   # resources :articles
 

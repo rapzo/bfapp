@@ -4,8 +4,24 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.get_all
-    puts @clients
+    begin
+      response = HTTParty.get("#{APIURI}clients")
+      data = JSON.parse(response.body)
+      clients = Array.new
+      data.map do |client|
+        c = Client.new({
+          code: client['CodCliente'],
+          name: client['NomeCliente'],
+          nif: client['NumContribuinte'],
+          address: client['MoradaCliente'],
+          phone:  client['Telefone'],
+          currency: client['Moeda']
+        })
+        clients.push(c)
+        p clients.inspect
+      end
+    end
+    @clients = clients
   end
 
   # GET /clients/1
@@ -26,9 +42,12 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(client_params)
+    if @client.valid?
+      ApiClient.save(@client)
+    end
 
     respond_to do |format|
-      if @client.save
+      if @client.valid?
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
@@ -65,7 +84,7 @@ class ClientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
-      @client = Client.find(params[:id])
+      @client = ApiClient.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
