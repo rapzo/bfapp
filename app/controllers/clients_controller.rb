@@ -42,7 +42,10 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(client_params)
+    
     if @client.valid?
+      code = Random.new
+      @client.code = code.rand(1000)
       ApiClient.save(@client)
     end
 

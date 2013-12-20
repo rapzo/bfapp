@@ -49,10 +49,8 @@ class ApiClient
   end
 
   def self.save(client)
-    code = Random.new
-
     response = post("#{base_uri}#{self.prefix}create", :body => {
-        :CodCliente => code.rand(1000),
+        :CodCliente => client.code,
         :NomeCliente => client.name,
         :NumContribuinte => client.nif,
         :MoradaCliente => client.address,
