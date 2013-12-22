@@ -8,7 +8,7 @@ gem 'sqlite3'
 # gem 'pg'
 
 # active-resource
-gem 'activeresource', :require => 'active_resource'
+# gem 'activeresource', :require => 'active_resource'
 
 # Going to party with httparty for some testings
 gem 'httparty'
@@ -33,10 +33,10 @@ gem 'sass-rails'
 
 # gem 'compass-rails'
 
-gem 'foundation-rails'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'foundation-rails'
 
 gem 'backbone-rails'
 

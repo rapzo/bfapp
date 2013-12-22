@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 var Order = Backbone.Model.extend({});
-var Orders = backbone.Collection.extend({
+var Orders = Backbone.Collection.extend({
   model: Order
 });
 

@@ -3,25 +3,8 @@ class ClientsController < ApplicationController
 
   # GET /clients
   # GET /clients.json
-  def index
-    begin
-      response = HTTParty.get("#{APIURI}clients")
-      data = JSON.parse(response.body)
-      clients = Array.new
-      data.map do |client|
-        c = Client.new({
-          code: client['CodCliente'],
-          name: client['NomeCliente'],
-          nif: client['NumContribuinte'],
-          address: client['MoradaCliente'],
-          phone:  client['Telefone'],
-          currency: client['Moeda']
-        })
-        clients.push(c)
-        p clients.inspect
-      end
-    end
-    @clients = clients
+  def index    
+    @clients = ApiClient.all
   end
 
   # GET /clients/1
@@ -51,7 +34,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.valid?
-        format.html { redirect_to :root, notice: 'Client was successfully created.' }
+        format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
         format.html { render action: 'new' }

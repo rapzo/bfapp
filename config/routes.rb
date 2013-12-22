@@ -64,14 +64,12 @@ Bfapp::Application.routes.draw do
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#delete", :as => "logout"
-  get "register" => "users#new", :as => "register"
-  post "register" => "users#create", :as => "users"
 
   get "catalog/:code"=> "articles#show", :as => "catalog_show"
 
   resources :sessions, :only => [:new, :create, :destroy]
 
-  resources :clients do
+  resources :clients, param: :code do
     resources :users
     resources :orders
   end
