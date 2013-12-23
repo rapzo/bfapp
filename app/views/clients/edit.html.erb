@@ -1,8 +1,180 @@
 <div class="large-12 columns">
   <h1>Editing client</h1>
 
-  <%= render 'form' %>
+  <div class="row">
+    <div class="large-8 large-centered columns">
 
-  <%= link_to 'Show', @client %> |
-  <%= link_to 'Back', clients_path %>
+      <% flash.each do |name, msg| %>
+        <div class="small-4 small-centered columns">
+        <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-box alert" %>
+        </div>
+      <% end %>
+
+      <div class="panel">
+
+      <%= form_for(@client, :url => client_path(@client.code), :method => :put) do |f| %>
+
+        <fieldset>
+          <legend><%= "Client information" %></legend>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+              <% if @client.errors[:name].present? %>
+              <% @client.errors[:name].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :nif %>
+              <%= f.text_field :nif %>
+              <% if @client.errors[:nif].present? %>
+              <% @client.errors[:nif].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :address %>
+              <%= f.text_field :address %>
+              <% if @client.errors[:address].present? %>
+              <% @client.errors[:address].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :phone %>
+              <%= f.text_field :phone %>
+              <% if @client.errors[:phone].present? %>
+              <% @client.errors[:phone].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :fax %>
+              <%= f.text_field :fax %>
+              <% if @client.errors[:fax].present? %>
+              <% @client.errors[:fax].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+     
+<%
+=begin
+%>
+         <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :country, :class => ('error' if !@client.errors[:country].empty?) %>
+              <%= f.text_field :country %>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :market, :class => ('error' if !@client.errors[:market].empty?) %>
+              <%= f.text_field :market %>
+            </div>
+          </div>
+    <%
+    =end
+    %>
+    <%
+    =begin
+    %>
+        <div class="row">
+          <div class="large-4 columns">
+            <%= f.label :payment_type %>
+            <%= f.radio_button :payment_type, 'cash', :checked => true %>
+            <%= f.label :payment_type_cash, 'Cash' %>
+            <%= f.radio_button :payment_type, 'check' %>
+            <%= f.label :payment_type_check, 'Check' %>
+            <%= f.radio_button :payment_type, 'card' %>
+            <%= f.label :payment_type_card, 'Card' %>
+          </div>
+
+          <div class="large-4 columns">
+            <%= f.label :payment_condition %>
+            <%= f.radio_button :payment_condition, 'pronto', :checked => true %>
+            <%= f.label :payment_condition_pronto, 'Pronto' %>
+            <%= f.radio_button :payment_condition, 'thirty' %>
+            <%= f.label :payment_condition_thirty, '30 days' %>
+            <%= f.radio_button :payment_condition, 'ninety' %>
+            <%= f.label :payment_condition_ninety, '90 days' %>
+          </div>
+          <div class="large-4 columns">
+            <%= f.label :currency %>
+            <%= f.radio_button :currency, 'EUR', :checked => true %>
+            <%= f.label :currency_euro, '€' %>
+            <%= f.radio_button :currency, 'EUR' %>
+            <%= f.label :currency_pound, '£' %>
+            <%= f.radio_button :currency, 'EUR' %>
+            <%= f.label :currency_dollar, '$' %>
+          </div>
+        </div>
+<%
+=end
+%>
+        </fieldset>
+
+        <fieldset>
+          <legend><%= "User information" %></legend>  
+        
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :email %>
+              <%= f.text_field :email %>
+              <% if @client.errors[:name].present? %>
+              <% @client.errors[:address].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+              <% if @client.errors[:name].present? %>
+              <% @client.errors[:address].each do |msg| %>
+              <%= msg %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </fieldset>
+        
+        <br />
+
+        <div class="row">
+          <div class="large-6 large-centered columns">
+            <%= f.submit "Enter", :class => "large-12 button" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+  <%= link_to 'Back', client_path(@client.code) %>
 </div>

@@ -1,0 +1,39 @@
+<h1>Listing admin_managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password hash</th>
+      <th>Password salt</th>
+      <th>Locked</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_managers.each do |admin_manager| %>
+      <tr>
+        <td><%= admin_manager.id %></td>
+        <td><%= admin_manager.name %></td>
+        <td><%= admin_manager.email %></td>
+        <td><%= admin_manager.password_hash %></td>
+        <td><%= admin_manager.password_salt %></td>
+        <td><%= admin_manager.locked %></td>
+        <td><%= admin_manager.active %></td>
+        <td><%= link_to 'Show', admin_manager %></td>
+        <td><%= link_to 'Edit', edit_admin_manager_path(admin_manager) %></td>
+        <td><%= link_to 'Destroy', admin_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manager', new_admin_manager_path %>

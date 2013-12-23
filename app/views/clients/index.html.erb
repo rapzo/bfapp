@@ -1,6 +1,8 @@
 <div class="large-12 columns">
   <h1>Listing clients</h1>
 
+  <p id="notice"><%= notice %></p>
+
   <table>
     <thead>
       <tr>
@@ -10,6 +12,9 @@
         <th>Address</th>
         <th>Phone</th>
         <th>Currency</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -22,6 +27,9 @@
           <td><%= client['address'] %></td>
           <td><%= client['phone'] %></td>
           <td><%= client['currency'] %></td>
+          <td><%= link_to 'Show', client_path(client.code) %></td>
+          <td><%= link_to 'Edit', edit_client_path(client.code) %></td>
+          <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

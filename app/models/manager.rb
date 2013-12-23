@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: managers
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  locked        :boolean          default(FALSE)
+#  active        :boolean          default(FALSE)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class Manager < ActiveRecord::Base
   attr_accessor :password
 
@@ -8,7 +23,7 @@ class Manager < ActiveRecord::Base
   validates_uniqueness_of :email
 
   def self.authenticate(email, password)
-    user = self.where(email: email)
+    user = self.where(email: email).first
     puts user.empty?
     if !user.empty?
       if user.password == BCrypt::Engine.hash_secret(password, user.password_salt)

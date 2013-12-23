@@ -1,4 +1,24 @@
 Bfapp::Application.routes.draw do
+  namespace :admin do
+    resources :orders
+  end
+
+  namespace :admin do
+    resources :articles
+  end
+
+  namespace :admin do
+    resources :users
+  end
+
+  namespace :admin do
+    resources :clients
+  end
+
+  namespace :admin do
+    resources :managers
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -67,25 +87,22 @@ Bfapp::Application.routes.draw do
 
   get "catalog/:code"=> "articles#show", :as => "catalog_show"
 
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions, :only => [:create, :destroy]
 
   resources :clients, param: :code do
     resources :users
-    resources :orders
+
+    post 'activate' => "users#activate", :as => "activate"
+
+    resources :orders, param: :doc
   end
+
+  get 'clients/:code' => "clients#show", :as => "current_user"
+
+  post 'users/:id/cart/:article/add/:q' => "users#add_to_cart", :as => "add_to_cart", :constraints => { :article => /[\w+\.]+/ }
+  delete 'users/:id/cart/:order_id/delete' => "users#remove_from_cart", :as => "remove_from_cart"
+  get 'users/:id/cart/checkout' => "users#checkout", :as => "checkout"
 
   resources :managers
-
-  # resources :articles
-
-  # resources :products
-  
-  
-  namespace :admin do
-    resource :products
-    resource :users
-    resource :clients
-    resource :articles
-  end
 
 end

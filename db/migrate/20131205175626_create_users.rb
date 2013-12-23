@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
-      t.boolean :active
-      t.boolean :locked
+      t.boolean :active, default: false
+      t.boolean :locked, default: false
       t.references :client, index: true
 
       t.timestamps

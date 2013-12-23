@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id         :integer          not null, primary key
+#  client_id  :integer
+#  article_id :integer
+#  quantity   :integer
+#  status     :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Order < ActiveRecord::Base
   def self.get_all
     begin

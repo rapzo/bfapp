@@ -9,12 +9,15 @@
 #  address           :string(255)
 #  phone             :string(255)
 #  fax               :string(255)
+#  email             :string(255)
 #  country           :string(255)
 #  market            :string(255)
 #  payment_type      :string(255)
 #  payment_condition :string(255)
 #  discount          :integer
 #  currency          :string(255)
+#  password          :string(255)
+#  username          :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
 #

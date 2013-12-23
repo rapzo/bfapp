@@ -1,0 +1,27 @@
+<div class="panel">
+  <h3><%= "User account" %></h3>
+
+  <p>
+    <strong>Username:</strong>
+    <%= @client.username %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @client.password %>
+  </p>
+  
+  <% if (@user.nil?) %>
+  <div>
+    <strong>No user yet!</strong>
+  </div>
+  <br />
+  <div>
+    <%= button_to "Activate account", [@user, @client], :class => 'button' %>
+  </div>
+  <% else %>
+  <div>
+    <strong><%= @user.email %></strong>
+  </div>
+  <% end %>
+</div>

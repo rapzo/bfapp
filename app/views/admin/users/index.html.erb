@@ -1,0 +1,39 @@
+<div class="large-12 columns">
+  <h1>Listing users</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Client_id</th>
+        <th>Active</th>
+        <th>Locked</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |admin_user| %>
+        <tr>
+          <td><%= admin_user.name %></td>
+          <td><%= admin_user.email %></td>
+          <td><%= admin_user.password %></td>
+          <td><%= admin_user.client_id %></td>
+          <td><%= admin_user.active %></td>
+          <td><%= admin_user.locked %></td>
+          <td><%= link_to 'Show', admin_user_path(admin_user) %></td>
+          <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New User', new_admin_user_path %>
+</div>

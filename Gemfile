@@ -5,8 +5,11 @@ gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+# Configured but not used for development
 # gem 'pg'
 
+# Ended up not being used
 # active-resource
 # gem 'activeresource', :require => 'active_resource'
 

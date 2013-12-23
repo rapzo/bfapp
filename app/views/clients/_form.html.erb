@@ -1,57 +1,102 @@
 <div class="row">
   <div class="large-8 large-centered columns">
+
+    <% flash.each do |name, msg| %>
+      <div class="small-4 small-centered columns">
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-box alert" %>
+      </div>
+    <% end %>
+
     <div class="panel">
-    
+  
     <%= form_for(@client) do |f| %>
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :name, :class => ('error' if !@client.errors[:name].empty?) %>
-          <%= f.text_field :name %>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :nif, :class => ('error' if !@client.errors[:nif].empty?) %>
-          <%= f.text_field :nif %>
-        </div>
-      </div>
+      <fieldset>
+        <legend><%= "Client information" %></legend>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :address, :class => ('error' if !@client.errors[:address].empty?) %>
-          <%= f.text_field :address %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <% if @client.errors[:name].present? %>
+            <% @client.errors[:name].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :phone, :class => ('error' if !@client.errors[:phone].empty?) %>
-          <%= f.text_field :phone %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :nif %>
+            <%= f.text_field :nif %>
+            <% if @client.errors[:nif].present? %>
+            <% @client.errors[:nif].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :fax, :class => ('error' if !@client.errors[:fax].empty?) %>
-          <%= f.text_field :fax %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :address %>
+            <%= f.text_field :address %>
+            <% if @client.errors[:address].present? %>
+            <% @client.errors[:address].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :country, :class => ('error' if !@client.errors[:country].empty?) %>
-          <%= f.text_field :country %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :phone %>
+            <%= f.text_field :phone %>
+            <% if @client.errors[:phone].present? %>
+            <% @client.errors[:phone].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <%= f.label :market, :class => ('error' if !@client.errors[:market].empty?) %>
-          <%= f.text_field :market %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :fax %>
+            <%= f.text_field :fax %>
+            <% if @client.errors[:fax].present? %>
+            <% @client.errors[:fax].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
+   
+<%
+=begin
+%>
+       <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :country, :class => ('error' if !@client.errors[:country].empty?) %>
+            <%= f.text_field :country %>
+          </div>
+        </div>
 
+
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :market, :class => ('error' if !@client.errors[:market].empty?) %>
+            <%= f.text_field :market %>
+          </div>
+        </div>
+<%
+=end
+%>
+<%
+=begin
+%>
       <div class="row">
         <div class="large-4 columns">
           <%= f.label :payment_type %>
@@ -82,6 +127,40 @@
           <%= f.label :currency_dollar, '$' %>
         </div>
       </div>
+<%
+=end
+%>
+      </fieldset>
+
+      <fieldset>
+        <legend><%= "User information" %></legend>  
+      
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            <% if @client.errors[:name].present? %>
+            <% @client.errors[:address].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+            <% if @client.errors[:name].present? %>
+            <% @client.errors[:address].each do |msg| %>
+            <%= msg %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </fieldset>
+      
+      <br />
 
       <div class="row">
         <div class="large-6 large-centered columns">

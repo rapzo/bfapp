@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="large-12 columns">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @manager.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @manager.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @manager.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @manager.email %>
+  </p>
 
-<p>
-  <strong>Password hash:</strong>
-  <%= @manager.password_hash %>
-</p>
+  <p>
+    <strong>Password hash:</strong>
+    <%= @manager.password_hash %>
+  </p>
 
-<p>
-  <strong>Password salt:</strong>
-  <%= @manager.password_salt %>
-</p>
+  <p>
+    <strong>Password salt:</strong>
+    <%= @manager.password_salt %>
+  </p>
 
-<p>
-  <strong>Locked:</strong>
-  <%= @manager.locked %>
-</p>
+  <p>
+    <strong>Locked:</strong>
+    <%= @manager.locked %>
+  </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @manager.active %>
-</p>
+  <p>
+    <strong>Active:</strong>
+    <%= @manager.active %>
+  </p>
 
-<%= link_to 'Edit', edit_manager_path(@manager) %> |
-<%= link_to 'Back', managers_path %>
+  <%= link_to 'Edit', edit_manager_path(@manager) %> |
+  <%= link_to 'Back', managers_path %>
+</div>

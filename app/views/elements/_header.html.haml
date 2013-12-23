@@ -7,12 +7,12 @@
 
     %section.top-bar-section
       %ul.right
-        - if (current_page?(:root))
+        - if not signed?
           %li
             = link_to('register', url_for(controller: 'clients', action: 'new'))
-        - if (!current_page?(:root))
+        - else
           %li
-            = link_to('home', url_for(controller: 'pages', action: 'index'))
+            = link_to('profile', current_user)
         %li
           = link_to('catalog', url_for(controller: 'articles', action: 'index'))
         %li

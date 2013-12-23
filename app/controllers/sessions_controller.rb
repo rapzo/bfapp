@@ -1,21 +1,23 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
-    params.permit(:email, :password, :password_confirm)
-    user = User.authenticate(params[:email], params[:password])
-    if user
-      session[:user_id] = user.id
-      redirect_to root_url, :notice => "Welcome #{user.name}!"
+    params.permit(:email, :password)
+    p params[:user]
+    @user = User.authenticate(params[:user])
+    if @user
+      session[:current_user] = @user.id
+      redirect_to root_url, :notice => "Welcome #{@user.name}!"
     else
       flash.now.alert = "Invalid credentials!"
-      render "new"
+      redirect_to login_path, :alert => "Invalid credentials!"
     end
   end
 
   def delete
-    session[:user_id] = nil
+    session.delete(:current_user)
     redirect_to root_url, :notice => "Goodbye!"
   end
 end

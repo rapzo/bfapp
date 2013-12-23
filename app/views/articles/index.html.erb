@@ -13,35 +13,51 @@
         </h5>
       </div>
 
+
       <h3><%= "Shopping cart" %></h3>
+      <p id="notice"><%= notice %></p>
+<% if signed? %>
+  <% current_cart.each do |order| %>
+    <% @articles.each do |a| %>
+      <% if a['code'] == order.article_id %>
       <a href="#">
         <div class="panel callout radius">
-          <%= current_cart %>
+          <strong><%= a['name'] %></strong>: <%= order.quantity %>
+          <%= button_to "X", remove_from_cart_path(current_user, order.id), method: :delete %>
         </div>
       </a>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if !current_cart.empty? %>
+  <%= link_to 'Checkout', checkout_path(current_user), :class => 'button' %>
+  <% end %>
+<% end %>
     </div>
 
 
     <div class="large-8 columns">
-      
-      <% @articles.each do |a| %>
-      <div class="large-12 panel clearfix">
-      <div class="row">
-          <div class="large-5 small-6 columns">
-            <img src="http://fillmurray.com/200/200">
+    <% @articles.each do |a| %>
+      <div class="panel">
+        <div class="row">
+          <div class="large-6 small-6 columns">
+            <img src="<%= pics(a['code'], 200, 200) %>">
           </div>
-          <div class="large-7 small-6 columns">
+          <div class="large-6 small-6 columns">
             <h5><%= a['name'] %></h5>
             <h6 class="subheader">
               <%= "Price for 1 #{a['unit']}" %>
               <strong><%= a['price'] ? a['price'] : "Not available" %> €</strong>
             </h6>
-            <button class="add-order small button"><%= "Order" %></button>
+            <% if (signed?) %>
+            <%= button_to "Order", add_to_cart_path(current_user, article: a['code'], q: 1), :class => "add-order small button" %>
+            <% else %>
+            <%= link_to "Login to buy", login_path, :class => "add-order small button" %>
+            <% end %>
           </div>
         </div>
       </div>
       <% end %>
-
     </div>
   </div>
 

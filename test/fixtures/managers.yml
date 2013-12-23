@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: managers
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  locked        :boolean          default(FALSE)
+#  active        :boolean          default(FALSE)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

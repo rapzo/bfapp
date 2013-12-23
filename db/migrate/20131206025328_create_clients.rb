@@ -7,6 +7,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :address
       t.string :phone
       t.string :fax
+      t.string :email
       t.string :country
       t.string :market
       t.string :payment_type
@@ -14,6 +15,8 @@ class CreateClients < ActiveRecord::Migration
       t.string :country
       t.integer :discount
       t.string :currency
+      t.string :password
+      t.string :username
 
       t.timestamps
     end

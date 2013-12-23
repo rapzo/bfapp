@@ -1,69 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="large-12 columns">
+  <h1><%= "Client #{@client.code}" %></h1>
 
-<p>
-  <strong>Code:</strong>
-  <%= @client.code %>
-</p>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= render 'show' %>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <%= render 'user' %>
+        </div>
+      </div>
 
-<p>
-  <strong>Nif:</strong>
-  <%= @client.nif %>
-</p>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= render 'orders' %>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @client.address %>
-</p>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @client.fax %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @client.country %>
-</p>
-
-<p>
-  <strong>Market:</strong>
-  <%= @client.market %>
-</p>
-
-<p>
-  <strong>Payment type:</strong>
-  <%= @client.payment_type %>
-</p>
-
-<p>
-  <strong>Payment condition:</strong>
-  <%= @client.payment_condition %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @client.country %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= @client.discount %>
-</p>
-
-<p>
-  <strong>Currency:</strong>
-  <%= @client.currency %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+  <div class="large-12 columns">
+    <%= link_to 'Edit', edit_client_path(@client) %>
+  </div>
+</div>

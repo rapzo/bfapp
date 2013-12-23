@@ -15,8 +15,4 @@
 //= require foundation
 //= require_tree .
 
-(function($, _, Backbone){
-	$(document).foundation();
-})(jQuery, _, Backbone);
-
 $(function(){ $(document).foundation(); });
